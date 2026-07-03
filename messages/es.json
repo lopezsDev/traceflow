@@ -1,0 +1,208 @@
+{
+  "Metadata": {
+    "title": "TraceFlow | Consultoría Tecnológica y Automatización",
+    "description": "Ayudamos a las empresas a organizar sus operaciones, automatizar tareas repetitivas, mejorar la experiencia del cliente e incrementar las ventas mediante la tecnología.",
+    "ogTitle": "TraceFlow | Consultoría Tecnológica para Empresas",
+    "ogDescription": "Optimice sus procesos comerciales, automatice flujos y escale su arquitectura en la nube con consultoría de élite."
+  },
+  "Navbar": {
+    "logo": "TraceFlow",
+    "solutions": "Soluciones",
+    "process": "Proceso",
+    "whyUs": "Por Qué Nosotros",
+    "bookDiagnosis": "Reservar Diagnóstico",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
+  },
+  "Hero": {
+    "badge": "Evolucione hoy",
+    "title1": "Tecnología que hace crecer tu ",
+    "title2": "negocio.",
+    "subtitle": "Ayudamos a las empresas a organizar sus operaciones, automatizar tareas repetitivas, mejorar la experiencia del cliente e incrementar las ventas mediante la tecnología.",
+    "ctaPrimary": "Reservar Diagnóstico de Negocio Gratis",
+    "ctaSecondary": "Ver Nuestras Soluciones",
+    "dashboardAlt": "Un panel de control isométrico 3D detallado flotando en un espacio blanco y limpio. El panel cuenta con paneles de vidrio translúcido con líneas de conexión de neón brillante, gráficos financieros elegantes y nodos de datos minimalistas en azul marino y acentos dorados."
+  },
+  "Services": {
+    "badge": "Nuestro Ecosistema",
+    "title": "Creado para la Excelencia Corporativa",
+    "items": {
+      "websites": {
+        "title": "Sitios Web Empresariales",
+        "description": "Identidades digitales de alto rendimiento que imponen autoridad."
+      },
+      "landings": {
+        "title": "Páginas de Destino",
+        "description": "Destinos optimizados para la conversión para marketing dirigido."
+      },
+      "crm": {
+        "title": "Gestión de Clientes",
+        "description": "Sistemas CRM a la medida para cultivar cada etapa del cliente."
+      },
+      "appointments": {
+        "title": "Sistemas de Citas",
+        "description": "Flujos de reserva sin fricciones para servicios profesionales."
+      },
+      "automation": {
+        "title": "Automatización de Procesos",
+        "description": "Elimine el trabajo manual con flujos lógicos inteligentes."
+      },
+      "cloud": {
+        "title": "Soluciones en la Nube",
+        "description": "Computación distribuida y segura para empresas modernas."
+      },
+      "aws": {
+        "title": "Infraestructura AWS",
+        "description": "Arquitectura en la nube optimizada sobre la red global de AWS."
+      },
+      "software": {
+        "title": "Desarrollo de Software",
+        "description": "Motores de código a la medida diseñados para necesidades comerciales específicas."
+      }
+    }
+  },
+  "Problems": {
+    "badge": "Complejidad Resuelta",
+    "title": "Resolvemos los problemas que ralentizan tu negocio.",
+    "subtitle": "Desde tareas manuales hasta información dispersa, transformamos la complejidad en claridad y resultados medibles.",
+    "labels": {
+      "problem": "Problema",
+      "solution": "Solución"
+    },
+    "items": {
+      "appointments": {
+        "problemTitle": "Los clientes olvidan las citas.",
+        "problemDesc": "Las ausencias y oportunidades perdidas le cuestan ingresos.",
+        "solutionTitle": "Recordatorios Automatizados",
+        "solutionDesc": "Menos ausencias, clientes más felices, mayores ingresos."
+      },
+      "leads": {
+        "problemTitle": "Nunca se hace seguimiento a los prospectos.",
+        "problemDesc": "Los clientes potenciales pierden el interés y eligen a la competencia.",
+        "solutionTitle": "Automatización de CRM",
+        "solutionDesc": "Gestión inteligente de la canalización de ventas que nunca duerme."
+      },
+      "information": {
+        "problemTitle": "La información del negocio está dispersa.",
+        "problemDesc": "Los datos importantes están en todas partes y son difíciles de encontrar.",
+        "solutionTitle": "Tableros Centralizados",
+        "solutionDesc": "Una única fuente de verdad para todos sus KPI críticos."
+      },
+      "manual": {
+        "problemTitle": "El trabajo manual consume demasiado tiempo.",
+        "problemDesc": "Las tareas repetitivas le quitan tiempo a lo que realmente importa.",
+        "solutionTitle": "Automatización de Flujos",
+        "solutionDesc": "Libere a su equipo para enfocarse en trabajo estratégico de alto valor."
+      },
+      "website": {
+        "problemTitle": "Su sitio web no está generando clientes.",
+        "problemDesc": "Mala experiencia de usuario y sin una estrategia de conversión clara.",
+        "solutionTitle": "Optimización de Conversiones",
+        "solutionDesc": "Experiencia de usuario respaldada por datos que convierte visitantes en clientes leales."
+      },
+      "visibility": {
+        "problemTitle": "Sin visibilidad del rendimiento.",
+        "problemDesc": "No se puede mejorar lo que no se mide.",
+        "solutionTitle": "Analítica en Tiempo Real",
+        "solutionDesc": "Información detallada que impulsa mejores decisiones comerciales."
+      }
+    },
+    "banner": {
+      "title": "Mejoramos cualquier cotización en cualquier servicio que ofrecemos.",
+      "subtitle": "Envíenos una cotización de otro proveedor y le ofreceremos una mejor solución.",
+      "cta": "Enviarnos su Cotización"
+    }
+  },
+  "Process": {
+    "badge": "La Metodología",
+    "title": "Cómo trazamos tu flujo",
+    "steps": {
+      "diagnosis": {
+        "title": "Diagnóstico Gratis",
+        "description": "Una consulta inicial de alto nivel para identificar barreras críticas de crecimiento y oportunidades."
+      },
+      "analysis": {
+        "title": "Análisis de Negocio",
+        "description": "Inmersión profunda en sus flujos de trabajo actuales, estructuras de datos y puntos de contacto del cliente."
+      },
+      "solution": {
+        "title": "Solución a la Medida",
+        "description": "Diseño de arquitectura y desarrollo de un conjunto tecnológico único adaptado a sus operaciones."
+      },
+      "implementation": {
+        "title": "Implementación",
+        "description": "Despliegue controlado, capacitación del equipo y monitoreo continuo del rendimiento para un ROI constante."
+      }
+    }
+  },
+  "Benefits": {
+    "title": "Diseñado para la Confiabilidad",
+    "items": {
+      "architecture": {
+        "title": "Arquitectura Escalable",
+        "description": "Construimos sistemas que crecen con usted. Nuestro enfoque nativo en la nube garantiza que, ya sea que atienda a diez o diez mil clientes, su infraestructura permanezca inquebrantable."
+      },
+      "security": {
+        "title": "Seguridad Primero",
+        "description": "Cifrado de grado empresarial y estándares de cumplimiento integrados en cada línea de código."
+      },
+      "automation": {
+        "title": "Automatización Inteligente",
+        "description": "Lógica sofisticada que imita la precisión humana a velocidades digitales."
+      },
+      "cloud": {
+        "title": "Estrategia Cloud-First",
+        "description": "Disponibilidad global y tiempo de actividad de alto rendimiento en todas las regiones."
+      },
+      "business": {
+        "title": "Enfoque de Negocios",
+        "description": "No solo construimos tecnología; construimos herramientas que impulsan los ingresos y el margen."
+      }
+    }
+  },
+  "CTA": {
+    "title": "Descubramos cómo la tecnología puede mejorar su negocio.",
+    "subtitle": "Sin compromiso, puro valor.",
+    "button": "Programar Mi Diagnóstico Gratis"
+  },
+  "Footer": {
+    "description": "Elevando las operaciones comerciales a través de consultoría tecnológica de élite e implementación de software a la medida.",
+    "headers": {
+      "company": "Compañía",
+      "support": "Soporte",
+      "newsletter": "Manténgase Actualizado"
+    },
+    "newsletter": {
+      "text": "Reciba los últimos conocimientos sobre automatización de negocios.",
+      "placeholder": "Dirección de correo electrónico",
+      "button": "Unirse",
+      "success": "¡Suscripción exitosa!"
+    },
+    "copyright": "© 2024 TraceFlow Technology Consulting. Todos los derechos reservados."
+  },
+  "DiagnosisModal": {
+    "title": "Solicitar Diagnóstico Gratis",
+    "subtitle": "Complete el formulario a continuación y un consultor se pondrá en contacto en menos de 24 horas.",
+    "quoteTitle": "Enviar Cotización para Mejorar",
+    "quoteSubtitle": "Adjunte o describa su cotización y le ofreceremos una propuesta superior.",
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "company": "Empresa",
+      "phone": "Teléfono (opcional)",
+      "message": "Cuéntenos sobre su negocio o cotización actual",
+      "submit": "Enviar solicitud",
+      "sending": "Enviando..."
+    },
+    "errors": {
+      "name": "El nombre es obligatorio (mínimo 3 caracteres)",
+      "email": "Ingrese un correo electrónico válido",
+      "company": "El nombre de la empresa es obligatorio",
+      "message": "Por favor describa sus necesidades (mínimo 10 caracteres)"
+    },
+    "success": {
+      "title": "¡Solicitud Enviada!",
+      "message": "Hemos recibido su información correctamente. Un consultor se comunicará con usted a la brevedad."
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "Metadata": {
+    "title": "TraceFlow | Technology Consulting & Automation",
+    "description": "We help businesses organize their operations, automate repetitive tasks, improve customer experience and increase sales through technology.",
+    "ogTitle": "TraceFlow | Technology Consulting for Enterprises",
+    "ogDescription": "Optimize your business processes, automate workflows, and scale your cloud infrastructure with elite consulting."
+  },
+  "Navbar": {
+    "logo": "TraceFlow",
+    "solutions": "Solutions",
+    "process": "Process",
+    "whyUs": "Why Us",
+    "bookDiagnosis": "Book Diagnosis",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "Hero": {
+    "badge": "Evolve today",
+    "title1": "Technology that helps your ",
+    "title2": "business grow.",
+    "subtitle": "We help businesses organize their operations, automate repetitive tasks, improve customer experience and increase sales through technology.",
+    "ctaPrimary": "Book a Free Business Diagnosis",
+    "ctaSecondary": "See Our Solutions",
+    "dashboardAlt": "A highly detailed 3D isometric dashboard interface floating in a clean white space. The dashboard features translucent glass panels with glowing neon connection lines, sleek financial charts, and minimalist data nodes in navy blue and gold accents."
+  },
+  "Services": {
+    "badge": "Our Ecosystem",
+    "title": "Built for Corporate Excellence",
+    "items": {
+      "websites": {
+        "title": "Business Websites",
+        "description": "High-performance digital identities that command authority."
+      },
+      "landings": {
+        "title": "Landing Pages",
+        "description": "Conversion-optimized destinations for targeted marketing."
+      },
+      "crm": {
+        "title": "Customer Management",
+        "description": "Tailored CRM systems to nurture every lead journey."
+      },
+      "appointments": {
+        "title": "Appointment Systems",
+        "description": "Zero-friction booking flows for professional services."
+      },
+      "automation": {
+        "title": "Process Automation",
+        "description": "Eliminate manual toil with intelligent logic flows."
+      },
+      "cloud": {
+        "title": "Cloud Solutions",
+        "description": "Secure, distributed computing for modern enterprises."
+      },
+      "aws": {
+        "title": "AWS Infrastructure",
+        "description": "Optimized cloud architecture on global AWS backbone."
+      },
+      "software": {
+        "title": "Software Development",
+        "description": "Custom-coded engines designed for specific business needs."
+      }
+    }
+  },
+  "Problems": {
+    "badge": "Complexity Solved",
+    "title": "We solve the problems that slow your business down.",
+    "subtitle": "From manual tasks to scattered information, we transform complexity into clarity and measurable results.",
+    "labels": {
+      "problem": "Problem",
+      "solution": "Solution"
+    },
+    "items": {
+      "appointments": {
+        "problemTitle": "Customers forget appointments.",
+        "problemDesc": "No-shows and missed opportunities cost you revenue.",
+        "solutionTitle": "Automated Reminders",
+        "solutionDesc": "Fewer no-shows, happier customers, more revenue."
+      },
+      "leads": {
+        "problemTitle": "Leads are never followed up.",
+        "problemDesc": "Potential customers lose interest and choose competitors.",
+        "solutionTitle": "CRM Automation",
+        "solutionDesc": "Intelligent pipeline management that never sleeps."
+      },
+      "information": {
+        "problemTitle": "Business information is scattered.",
+        "problemDesc": "Important data is everywhere and hard to find.",
+        "solutionTitle": "Centralized Dashboards",
+        "solutionDesc": "A single source of truth for all your critical KPIs."
+      },
+      "manual": {
+        "problemTitle": "Manual work consumes too much time.",
+        "problemDesc": "Repetitive tasks take time away from what really matters.",
+        "solutionTitle": "Workflow Automation",
+        "solutionDesc": "Free your team to focus on high-value strategic work."
+      },
+      "website": {
+        "problemTitle": "Your website isn't generating customers.",
+        "problemDesc": "Poor user experience and no clear conversion strategy.",
+        "solutionTitle": "Conversion Optimization",
+        "solutionDesc": "Data-backed UX that turns visitors into loyal clients."
+      },
+      "visibility": {
+        "problemTitle": "No visibility into performance.",
+        "problemDesc": "You can't improve what you don't measure.",
+        "solutionTitle": "Real-time Analytics",
+        "solutionDesc": "Granular insights that drive better business decisions."
+      }
+    },
+    "banner": {
+      "title": "We improve any quote in any service we offer.",
+      "subtitle": "Send us a quote from another provider and we'll offer you a better solution.",
+      "cta": "Send Us Your Quote"
+    }
+  },
+  "Process": {
+    "badge": "The Methodology",
+    "title": "How we trace your flow",
+    "steps": {
+      "diagnosis": {
+        "title": "Free Diagnosis",
+        "description": "An initial high-level consultation to identify critical growth barriers and opportunities."
+      },
+      "analysis": {
+        "title": "Business Analysis",
+        "description": "Deep dive into your current workflows, data structures, and customer journey touchpoints."
+      },
+      "solution": {
+        "title": "Custom Solution",
+        "description": "Architecture design and development of a unique tech stack tailored to your operations."
+      },
+      "implementation": {
+        "title": "Implementation",
+        "description": "Controlled deployment, team training, and ongoing performance monitoring for continuous ROI."
+      }
+    }
+  },
+  "Benefits": {
+    "title": "Engineered for Reliability",
+    "items": {
+      "architecture": {
+        "title": "Scalable Architecture",
+        "description": "We build systems that grow with you. Our cloud-native approach ensures that whether you're serving ten or ten thousand clients, your infrastructure remains unbreakable."
+      },
+      "security": {
+        "title": "Security First",
+        "description": "Enterprise-grade encryption and compliance standards embedded in every line of code."
+      },
+      "automation": {
+        "title": "Intelligent Automation",
+        "description": "Sophisticated logic that mimics human precision at digital speeds."
+      },
+      "cloud": {
+        "title": "Cloud-First Strategy",
+        "description": "Global availability and high-performance uptime across regions."
+      },
+      "business": {
+        "title": "Business-Focused",
+        "description": "We don't just build tech; we build tools that drive revenue and margin."
+      }
+    }
+  },
+  "CTA": {
+    "title": "Let's discover how technology can improve your business.",
+    "subtitle": "No obligation, pure value.",
+    "button": "Schedule My Free Diagnosis"
+  },
+  "Footer": {
+    "description": "Elevating business operations through elite technology consulting and bespoke software implementation.",
+    "headers": {
+      "company": "Company",
+      "support": "Support",
+      "newsletter": "Stay Updated"
+    },
+    "newsletter": {
+      "text": "Get the latest insights on business automation.",
+      "placeholder": "Email address",
+      "button": "Join",
+      "success": "Subscription successful!"
+    },
+    "copyright": "© 2024 TraceFlow Technology Consulting. All rights reserved."
+  },
+  "DiagnosisModal": {
+    "title": "Request Free Diagnosis",
+    "subtitle": "Fill out the form below and a consultant will reach out in less than 24 hours.",
+    "quoteTitle": "Submit a Quote to Match",
+    "quoteSubtitle": "Attach or describe your quote and we will present a superior proposal.",
+    "fields": {
+      "name": "Full name",
+      "email": "Email address",
+      "company": "Company name",
+      "phone": "Phone (optional)",
+      "message": "Tell us about your business or current quote",
+      "submit": "Submit request",
+      "sending": "Sending..."
+    },
+    "errors": {
+      "name": "Name is required (minimum 3 characters)",
+      "email": "Please enter a valid email address",
+      "company": "Company name is required",
+      "message": "Please describe your needs (minimum 10 characters)"
+    },
+    "success": {
+      "title": "Request Sent!",
+      "message": "We have successfully received your information. A consultant will contact you shortly."
+    }
+  }
+}

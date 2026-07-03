@@ -1,0 +1,638 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TraceFlow | Technology Consulting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-fixed": "#081b39",
+                        "outline": "#75777e",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d7e2ff",
+                        "on-surface-variant": "#44474e",
+                        "primary": "#00071a",
+                        "surface-container": "#e5eeff",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#43474a",
+                        "on-tertiary-container": "#84878a",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-fixed-dim": "#c3c7ca",
+                        "secondary-fixed-dim": "#fabd00",
+                        "on-primary-fixed-variant": "#374767",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "primary-container": "#0d1f3d",
+                        "on-secondary-container": "#6c5000",
+                        "secondary-fixed": "#ffdf9e",
+                        "inverse-primary": "#b6c6ed",
+                        "surface-tint": "#4e5e80",
+                        "on-surface": "#0b1c30",
+                        "secondary-container": "#fdc003",
+                        "on-secondary-fixed": "#261a00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "tertiary-fixed": "#e0e3e6",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary": "#040809",
+                        "on-primary-container": "#7787ab",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#181c1e",
+                        "tertiary-container": "#1c2022",
+                        "primary-fixed-dim": "#b6c6ed",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary": "#785900",
+                        "surface-dim": "#cbdbf5",
+                        "outline-variant": "#c5c6ce",
+                        "on-background": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "section-padding-lg": "120px",
+                        "section-padding-sm": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 20px 40px -15px rgba(0, 7, 26, 0.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-parallax {
+            transition: transform 0.2s ease-out;
+        }
+
+        .flip-card {
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .process-line::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00071a, #fabd00, #00071a);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass shadow-sm border-b border-white/20">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="TraceFlow Logo" class="h-8 md:h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgWaA90AILD1wMN1JSHJmRPwOYbrQrh9MNnyqjS0WFlCxB0Lm9OqfE5mlzYpK5O2Vg3YqACSrgq6pKhKWynETdlFCQwSEzN_0cunXyTUgZEvYS0h_uFY8FxCq-lBsVrk43BhZM5mWCKfiCzfqXynX4e71J8GDj7fMUVJUKVVICegLutQ0YERdzI7DhIu35IPRsaEcsD9PiUlbBdhgUy1OCyesOEy-nioPOloxywIxKY0V8WiqaZBgZgtVRdCKC2sLSYksLVpyOFIkqwg">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary">TraceFlow</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#solutions">Solutions</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#process">Process</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#why-us">Why Us</a>
+<a class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform hover:bg-primary-container" href="#diagnosis">Book Diagnosis</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-section-padding-sm md:pt-48 md:pb-section-padding-lg overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6 reveal active">
+<h1 class="font-display-lg text-headline-xl md:text-display-lg mb-6 text-primary tracking-tight">
+                    Technology that helps your <span class="text-secondary">business grow.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl leading-relaxed">
+                    We help businesses organize their operations, automate repetitive tasks, improve customer experience and increase sales through technology.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="px-8 py-4 bg-primary text-on-primary rounded-full font-label-md text-body-md flex items-center justify-center gap-2 hover:shadow-xl hover:-translate-y-1 transition-all" href="#diagnosis">
+                        Book a Free Business Diagnosis
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="px-8 py-4 border border-outline text-primary rounded-full font-label-md text-body-md flex items-center justify-center hover:bg-surface-container-low transition-colors" href="#solutions">
+                        See Our Solutions
+                    </a>
+</div>
+</div>
+<div class="lg:col-span-6 reveal relative h-[400px] md:h-[600px] flex items-center justify-center active">
+<!-- Floating Visual Element Placeholder -->
+<div class="hero-parallax relative w-full h-full flex items-center justify-center" style="transform: translate(-8.33333px, -51.9px);">
+<div class="absolute inset-0 bg-secondary/5 rounded-full blur-[120px]"></div>
+<div class="relative z-10 glass p-4 rounded-2xl shadow-2xl scale-110 md:scale-125">
+<img class="rounded-xl w-full max-w-md" data-alt="A highly detailed 3D isometric dashboard interface floating in a clean white space. The dashboard features translucent glass panels with glowing neon connection lines, sleek financial charts, and minimalist data nodes in navy blue and gold accents. The aesthetic is ultra-modern, professional, and corporate, with soft ambient shadows creating a sense of depth and layered intelligence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrRILdT5D73NmDsXRrW61r9UnRJMXpjhnzM4nbYFbprhs36urMx0eyKOSXCWZN04zHOSNx7UKy4vyviskdOED1uclTMvOEImNxtrk0rM0O968ZhcwPLIuUqooWqcynSiBBxLVL0sm-1f6eeZ_T7ey9khDABsD4ayjM0BQFU_wlbegJfE3zFosVWWh0mzFE2slNygQqGbyU0wBY-WOGvosF-VeEkVeFe7SrMLVnyBIfyoO8dljIHJSz">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section (Grid of Solutions) -->
+<section class="bg-surface py-section-padding-sm md:py-section-padding-lg" id="solutions">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16 reveal active">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container bg-primary-container px-4 py-1.5 rounded-full inline-block mb-4">Our Ecosystem</span>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-6">Built for Corporate Excellence</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter reveal active">
+<!-- Card 1 -->
+<div class="glass p-8 rounded-2xl ambient-shadow hover:-translate-y-2 transition-transform border border-outline-variant/30">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">language</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile font-bold mb-3">Business Websites</h3>
+<p class="text-on-surface-variant font-body-md">High-performance digital identities that command authority.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass p-8 rounded-2xl ambient-shadow hover:-translate-y-2 transition-transform border border-outline-variant/30">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">ads_click</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile font-bold mb-3">Landing Pages</h3>
+<p class="text-on-surface-variant font-body-md">Conversion-optimized destinations for targeted marketing.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass p-8 rounded-2xl ambient-shadow hover:-translate-y-2 transition-transform border border-outline-variant/30">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile font-bold mb-3">Customer Management</h3>
+<p class="text-on-surface-variant font-body-md">Tailored CRM systems to nurture every lead journey.</p>
+</div>
+<!-- Card 4 -->
+<div class="glass p-8 rounded-2xl ambient-shadow hover:-translate-y-2 transition-transform border border-outline-variant/30">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile font-bold mb-3">Appointment Systems</h3>
+<p class="text-on-surface-variant font-body-md">Zero-friction booking flows for professional services.</p>
+</div>
+<!-- Card 5 -->
+<div class="glass p-8 rounded-2xl ambient-shadow hover:-translate-y-2 transition-transform border border-outline-variant/30">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile font-bold mb-3">Process Automation</h3>
+<p class="text-on-surface-variant font-body-md">Eliminate manual toil with intelligent logic flows.</p>
+</div>
+<!-- Card 6 -->
+<div class="glass p-8 rounded-2xl ambient-shadow hover:-translate-y-2 transition-transform border border-outline-variant/30">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">cloud</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile font-bold mb-3">Cloud Solutions</h3>
+<p class="text-on-surface-variant font-body-md">Secure, distributed computing for modern enterprises.</p>
+</div>
+<!-- Card 7 -->
+<div class="glass p-8 rounded-2xl ambient-shadow hover:-translate-y-2 transition-transform border border-outline-variant/30">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">storage</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile font-bold mb-3">AWS Infrastructure</h3>
+<p class="text-on-surface-variant font-body-md">Optimized cloud architecture on global AWS backbone.</p>
+</div>
+<!-- Card 8 -->
+<div class="glass p-8 rounded-2xl ambient-shadow hover:-translate-y-2 transition-transform border border-outline-variant/30">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile font-bold mb-3">Software Development</h3>
+<p class="text-on-surface-variant font-body-md">Custom-coded engines designed for specific business needs.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Problems We Solve (Interactive) -->
+<section class="py-section-padding-sm md:py-section-padding-lg bg-surface" id="complexity-solved">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<!-- Header -->
+<div class="text-center mb-16 reveal active">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant border border-outline-variant px-4 py-1 rounded-full inline-block mb-6">Complexity Solved</span>
+<h2 class="font-display-lg text-headline-xl md:text-display-lg text-primary mb-6 leading-tight">
+                We solve the problems that <br class="hidden md:block"> <span class="text-secondary">slow your business down.</span>
+</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                From manual tasks to scattered information, we transform complexity into clarity and measurable results.
+            </p>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal active">
+<!-- Card 1: Appointments -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">calendar_today</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Problem</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-secondary">Solution</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Customers forget appointments.</h4>
+<p class="text-xs text-on-surface-variant">No-shows and missed opportunities cost you revenue.</p>
+</div>
+<span class="material-symbols-outlined text-primary/20">arrow_forward</span>
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Automated Reminders</h4>
+<p class="text-xs text-on-surface-variant">Fewer no-shows, happier customers, more revenue.</p>
+</div>
+</div>
+</div>
+<!-- Card 2: Leads -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">person_search</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Problem</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-secondary">Solution</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Leads are never followed up.</h4>
+<p class="text-xs text-on-surface-variant">Potential customers lose interest and choose competitors.</p>
+</div>
+<span class="material-symbols-outlined text-primary/20">arrow_forward</span>
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">CRM Automation</h4>
+<p class="text-xs text-on-surface-variant">Intelligent pipeline management that never sleeps.</p>
+</div>
+</div>
+</div>
+<!-- Card 3: Information -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">layers_clear</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Problem</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-secondary">Solution</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Business information is scattered.</h4>
+<p class="text-xs text-on-surface-variant">Important data is everywhere and hard to find.</p>
+</div>
+<span class="material-symbols-outlined text-primary/20">arrow_forward</span>
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Centralized Dashboards</h4>
+<p class="text-xs text-on-surface-variant">A single source of truth for all your critical KPIs.</p>
+</div>
+</div>
+</div>
+<!-- Card 4: Manual Work -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">timer_off</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Problem</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-secondary">Solution</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Manual work consumes too much time.</h4>
+<p class="text-xs text-on-surface-variant">Repetitive tasks take time away from what really matters.</p>
+</div>
+<span class="material-symbols-outlined text-primary/20">arrow_forward</span>
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Workflow Automation</h4>
+<p class="text-xs text-on-surface-variant">Free your team to focus on high-value strategic work.</p>
+</div>
+</div>
+</div>
+<!-- Card 5: Website -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">no_accounts</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Problem</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-secondary">Solution</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Your website isn't generating customers.</h4>
+<p class="text-xs text-on-surface-variant">Poor user experience and no clear conversion strategy.</p>
+</div>
+<span class="material-symbols-outlined text-primary/20">arrow_forward</span>
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Conversion Optimization</h4>
+<p class="text-xs text-on-surface-variant">Data-backed UX that turns visitors into loyal clients.</p>
+</div>
+</div>
+</div>
+<!-- Card 6: Visibility -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">visibility_off</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Problem</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-secondary">Solution</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">No visibility into performance.</h4>
+<p class="text-xs text-on-surface-variant">You can't improve what you don't measure.</p>
+</div>
+<span class="material-symbols-outlined text-primary/20">arrow_forward</span>
+<div class="flex-1">
+<h4 class="font-bold text-sm mb-1">Real-time Analytics</h4>
+<p class="text-xs text-on-surface-variant">Granular insights that drive better business decisions.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Banner -->
+<div class="mt-16 bg-surface-container-low border border-outline-variant/30 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 reveal active">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">rocket_launch</span>
+</div>
+<p class="font-bold text-primary">
+                    We <span class="text-secondary">improve</span> any quote in any service we offer.
+                    <span class="block text-xs font-normal text-on-surface-variant">Send us a quote from another provider and we'll offer you a better solution.</span>
+</p>
+</div>
+<a class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-sm flex items-center gap-2 hover:bg-primary-container transition-colors" href="#diagnosis">
+                Send Us Your Quote
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Our Process (Animated Timeline) -->
+<section class="py-section-padding-sm md:py-section-padding-lg relative bg-surface overflow-hidden" id="process">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-24 reveal active">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 block">The Methodology</span>
+<h2 class="font-headline-xl text-headline-xl text-primary">How we trace your flow</h2>
+</div>
+<div class="relative process-line max-w-4xl mx-auto space-y-24">
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-8 reveal active">
+<div class="md:w-1/2 text-center md:text-right">
+<h3 class="font-headline-lg text-headline-xl text-primary mb-2">Free Diagnosis</h3>
+<p class="text-on-surface-variant">An initial high-level consultation to identify critical growth barriers and opportunities.</p>
+</div>
+<div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">1</div>
+<div class="md:w-1/2"></div>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col md:flex-row-reverse items-center gap-8 reveal active">
+<div class="md:w-1/2 text-center md:text-left">
+<h3 class="font-headline-lg text-headline-xl text-primary mb-2">Business Analysis</h3>
+<p class="text-on-surface-variant">Deep dive into your current workflows, data structures, and customer journey touchpoints.</p>
+</div>
+<div class="w-16 h-16 bg-secondary text-on-secondary rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">2</div>
+<div class="md:w-1/2"></div>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-8 reveal active">
+<div class="md:w-1/2 text-center md:text-right">
+<h3 class="font-headline-lg text-headline-xl text-primary mb-2">Custom Solution</h3>
+<p class="text-on-surface-variant">Architecture design and development of a unique tech stack tailored to your operations.</p>
+</div>
+<div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">3</div>
+<div class="md:w-1/2"></div>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col md:flex-row-reverse items-center gap-8 reveal active">
+<div class="md:w-1/2 text-center md:text-left">
+<h3 class="font-headline-lg text-headline-xl text-primary mb-2">Implementation</h3>
+<p class="text-on-surface-variant">Controlled deployment, team training, and ongoing performance monitoring for continuous ROI.</p>
+</div>
+<div class="w-16 h-16 bg-secondary text-on-secondary rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">4</div>
+<div class="md:w-1/2"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why TraceFlow (Bento Grid) -->
+<section class="py-section-padding-sm md:py-section-padding-lg" id="why-us">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-12 text-center reveal active">Engineered for Reliability</h2>
+<div class="grid grid-cols-1 md:grid-cols-6 gap-gutter reveal active">
+<div class="md:col-span-3 lg:col-span-4 glass p-10 rounded-3xl ambient-shadow">
+<div class="mb-8">
+<span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">architecture</span>
+</div>
+<h3 class="font-display-lg text-headline-lg mb-4">Scalable Architecture</h3>
+<p class="text-on-surface-variant text-body-lg max-w-xl">We build systems that grow with you. Our cloud-native approach ensures that whether you're serving ten or ten thousand clients, your infrastructure remains unbreakable.</p>
+</div>
+<div class="md:col-span-3 lg:col-span-2 glass p-10 rounded-3xl ambient-shadow bg-primary text-on-primary border-none">
+<div class="mb-8">
+<span class="material-symbols-outlined text-5xl text-secondary-fixed">security</span>
+</div>
+<h3 class="font-headline-lg mb-4">Security First</h3>
+<p class="opacity-80">Enterprise-grade encryption and compliance standards embedded in every line of code.</p>
+</div>
+<div class="md:col-span-2 glass p-10 rounded-3xl ambient-shadow">
+<div class="mb-6 text-secondary">
+<span class="material-symbols-outlined text-4xl">automation</span>
+</div>
+<h4 class="font-headline-lg mb-2">Intelligent Automation</h4>
+<p class="text-on-surface-variant">Sophisticated logic that mimics human precision at digital speeds.</p>
+</div>
+<div class="md:col-span-2 glass p-10 rounded-3xl ambient-shadow">
+<div class="mb-6 text-secondary">
+<span class="material-symbols-outlined text-4xl">cloud_sync</span>
+</div>
+<h4 class="font-headline-lg mb-2">Cloud-First Strategy</h4>
+<p class="text-on-surface-variant">Global availability and high-performance uptime across regions.</p>
+</div>
+<div class="md:col-span-2 glass p-10 rounded-3xl ambient-shadow">
+<div class="mb-6 text-secondary">
+<span class="material-symbols-outlined text-4xl">business_center</span>
+</div>
+<h4 class="font-headline-lg mb-2">Business-Focused</h4>
+<p class="text-on-surface-variant">We don't just build tech; we build tools that drive revenue and margin.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-section-padding-lg relative" id="diagnosis">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center relative z-10 reveal active">
+<div class="glass py-20 px-8 md:px-24 rounded-[3rem] shadow-2xl border-white/50 relative overflow-hidden">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#00071a 1px, transparent 1px); background-size: 30px 30px;"></div>
+<h2 class="font-display-lg text-headline-xl md:text-display-lg text-primary mb-8 leading-tight">
+                    Let's discover how technology can <br class="hidden md:block"> <span class="text-secondary">improve your business.</span>
+</h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-body-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        Schedule My Free Diagnosis
+                    </button>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span class="font-label-md">No obligation, pure value.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface py-section-padding-sm border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 mb-8 md:mb-0">
+<div class="flex items-center gap-2 mb-6">
+<img alt="TraceFlow Logo" class="h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABnlsj4eHX_2IWbjM_zYzTmwff85EmKp5aCyt3N5tUwn1xP_IX7qQe11JpBFxbKT9XsBxarh35DzYcWZDtVxzoDZe19cwOhbiUSZ4kfin2OoBnWOWNvpk1Ei64T7tuzrdPUZxLLgEycUyO067mz1Uhf-W9ynOlctQrqqcUxppaOBd12MtsM9qlrVISI7qGrJdNbrWA8VPh2vBwKJSOLhV2hKqHTuG4h6fMdiA9pg6QRyiQjMOae0PQ5Kc4USUM2WjTMQ">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">TraceFlow</span>
+</div>
+<p class="font-body-md text-on-surface-variant max-w-sm mb-6">
+                    Elevating business operations through elite technology consulting and bespoke software implementation.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-label-md text-primary mb-6">Company</h5>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Solutions</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Process</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Why Us</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-label-md text-primary mb-6">Support</h5>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="md:col-span-4">
+<h5 class="font-label-md text-primary mb-6">Stay Updated</h5>
+<p class="font-body-md text-on-surface-variant mb-4">Get the latest insights on business automation.</p>
+<form class="flex gap-2">
+<input class="flex-1 px-4 py-2 rounded-lg bg-white border border-outline-variant focus:ring-2 focus:ring-primary focus:border-transparent outline-none" placeholder="Email address" type="email">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md hover:bg-primary-container transition-colors">Join</button>
+</form>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-16 pt-8 border-t border-outline-variant/30 text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 TraceFlow Technology Consulting. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Reveal Animations
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Initial check
+        reveal();
+
+        // Parallax Effect for Hero
+        document.addEventListener('mousemove', (e) => {
+            const heroParallax = document.querySelector('.hero-parallax');
+            if (heroParallax) {
+                const moveX = (e.clientX - window.innerWidth / 2) / 60;
+                const moveY = (e.clientY - window.innerHeight / 2) / 60;
+                heroParallax.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+        });
+    </script>
+
+
+
+
+</body></html>
