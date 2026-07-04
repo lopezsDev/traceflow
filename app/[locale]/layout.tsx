@@ -8,6 +8,7 @@ import { Navbar } from "@/components/sections/Navbar"
 import { Footer } from "@/components/sections/Footer"
 import { DiagnosisModal } from "@/components/sections/DiagnosisModal"
 import "@/styles/globals.css"
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -82,6 +83,7 @@ export default async function LocaleLayout({
           <DiagnosisModal />
         </NextIntlClientProvider>
       </body>
+      <GoogleAnalytics gaId="G-3Y47M0RES4" />
     </html>
   )
 }
