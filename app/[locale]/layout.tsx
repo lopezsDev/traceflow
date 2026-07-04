@@ -28,7 +28,7 @@ export async function generateMetadata({
   }
 
   const t = await getTranslations({ locale, namespace: "Metadata" })
-  const siteUrl = "https://traceflow.consulting" // Canonical URL template
+  const siteUrl = "https://traceflow-dev.vercel.app" // Canonical URL template
 
   return {
     title: t("title"),
