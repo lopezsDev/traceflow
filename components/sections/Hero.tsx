@@ -36,7 +36,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden bg-background">
+   <section className="relative pt-16 pb-12 md:pt-24 md:pb-24 overflow-hidden bg-background border-b border-outline-variant/20">
       {/* Background radial gradient accent */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--color-surface-container-low)_0%,_transparent_65%)] pointer-events-none" />
 
@@ -127,10 +127,10 @@ export function Hero() {
             <div className="absolute inset-0 bg-secondary/5 rounded-full blur-[100px] pointer-events-none" />
 
             {/* Isometric Glass Dashboard Container */}
-            <div className="relative z-10 glass p-4 rounded-3xl shadow-2xl scale-100 sm:scale-110 md:scale-115 border border-white/40 overflow-hidden w-full max-w-[450px] aspect-[4/3] flex items-center justify-center bg-white/40">
+            <div className="relative z-10 glass p-4 rounded-3xl shadow-2xl scale-100 sm:scale-110 md:scale-115 !border-1 border-white/40 overflow-hidden w-full max-w-[450px] aspect-[4/3] flex items-center justify-center bg-white/40">
               <Image
                 className="rounded-2xl object-cover w-full h-full"
-                src="/images/dashboard.jpg"
+                src="/images/dashb.jpg"
                 alt={t("dashboardAlt")}
                 width={450}
                 height={337}

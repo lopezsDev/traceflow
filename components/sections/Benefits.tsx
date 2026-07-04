@@ -28,7 +28,7 @@ export function Benefits() {
   }
 
   return (
-    <section className="py-20 md:py-32 bg-background" id="why-us">
+    <section className="py-20 md:py-32 bg-background border-b border-outline-variant/20" id="why-us">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <motion.h2
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}

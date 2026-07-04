@@ -72,7 +72,7 @@ export function Services() {
   }
 
   return (
-    <section className="bg-surface py-20 md:py-32" id="solutions">
+    <section className="bg-surface py-20 md:py-32 border-b border-outline-variant/20" id="solutions">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">

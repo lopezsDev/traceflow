@@ -36,7 +36,7 @@ export function Process() {
   ]
 
   return (
-    <section className="py-20 md:py-32 relative bg-surface overflow-hidden" id="process">
+    <section className="py-20 md:py-32 relative bg-surface overflow-hidden border-b border-outline-variant/20" id="process">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-24 flex flex-col items-center">
